@@ -8,6 +8,16 @@
 
 session_start();
 session_destroy();
+
+function session_in_progress() {
+    if (!is_readable(session_save_path())) return NULL;
+    while (false !== ($entry = readdir(opendir(session_save_path())))) {
+        if ($entry != "." && $entry != "..") {
+            return false;
+        }
+    }
+    return true;
+}
 ?>
 
 <!DOCTYPE html>

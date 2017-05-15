@@ -19,6 +19,10 @@ if (!isset($_SESSION['current_quest'])) { //if user has no progress, start new s
         if ($_GET['answer'] == $_SESSION['correct_answer']) {
             $_SESSION['current_trial'] += 1;
             unset($_SESSION['correct_answer']);
+        } else {
+            $_SESSION['current_trial'] = 1;
+            unset($_SESSION['correct_answer']);
+            $_SESSION['alert'] = 'You have failed!\nReturn to the beginning of this quest and try again.';
         }
     }
 }
@@ -53,6 +57,10 @@ if (Trial::quest_completed($_SESSION['current_quest'], $_SESSION['current_trial'
     <link href="css/app.css" rel="stylesheet">
 </head>
 <body>
+<?php if(isset($_SESSION['alert'])) {
+    echo '<script type="text/javascript">alert("' . $_SESSION['alert'] . '");</script>';
+    unset($_SESSION['alert']);
+} ?>
 <div class="vertical-center text-center">
     <div class="container panel-container">
         <div class="panel panel-default">
