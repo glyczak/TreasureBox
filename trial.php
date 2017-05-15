@@ -9,6 +9,7 @@
 
 class Trial {
     public $body;
+    public $question;
     public $correct_answer;
     public $wrong_answer;
 
@@ -44,17 +45,20 @@ class Trial {
                 //TODO implement first quest trials
                 switch ($trial) {
                     case 1:
-                        $this->body = 'This is the first test challenge';
+                        $this->body = 'This is the first test challenge.';
+                        $this->question = 'What do you choose?';
                         $this->correct_answer = 'Right answer';
                         $this->wrong_answer = 'Wrong answer';
                         break;
                     case 2:
-                        $this->body = 'This is the second test challenge';
+                        $this->body = 'This is the second test challenge.';
+                        $this->question = 'What do you choose?';
                         $this->correct_answer = 'Right answer';
                         $this->wrong_answer = 'Wrong answer';
                         break;
                     case 3:
-                        $this->body = 'This is the third test challenge';
+                        $this->body = 'This is the third test challenge.';
+                        $this->question = 'What do you choose?';
                         $this->correct_answer = 'Right answer';
                         $this->wrong_answer = 'Wrong answer';
                         break;
@@ -65,6 +69,7 @@ class Trial {
                 switch ($trial) {
                     case 1:
                         $this->body = '';
+                        $this->question = '';
                         $this->correct_answer = '';
                         $this->wrong_answer = '';
                         break;
@@ -75,6 +80,7 @@ class Trial {
                 switch ($trial) {
                     case 1:
                         $this->body = '';
+                        $this->question = '';
                         $this->correct_answer = '';
                         $this->wrong_answer = '';
                         break;
