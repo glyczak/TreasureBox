@@ -50,7 +50,7 @@ if (Trial::quest_completed($_SESSION['current_quest'], $_SESSION['current_trial'
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Quest <?php echo $_SESSION['current_quest'] ?>, Trial <?php $_SESSION['current_trial'] ?> -
+    <title>Quest <?php echo $_SESSION['current_quest'] ?>, Trial <?php echo $_SESSION['current_trial'] ?> -
         TreasureBox</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -66,7 +66,7 @@ if (Trial::quest_completed($_SESSION['current_quest'], $_SESSION['current_trial'
         <div class="panel panel-default">
             <?php if (isset($trial)): ?>
                 <div class="panel-heading">
-                    <h3 class="panel-title">Welcome to TreasureBox!</h3>
+                    <h3 class="panel-title">Quest <?php echo $_SESSION['current_quest'] ?>, Trial <?php echo $_SESSION['current_trial'] ?></h3>
                 </div>
                 <div class="panel-body">
                     <p><?php echo $trial->body ?></p>
