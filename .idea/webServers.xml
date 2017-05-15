@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="357b8c60-35e4-4ce6-81e7-0b5474656770" name="Development" url="https://gaba.ga/development/treasurebox">
+        <fileTransfer host="gaba.ga" port="8022" rootFolder="/Users/glyczak/ci/treasurebox" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="8022" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
