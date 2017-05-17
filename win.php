@@ -2,13 +2,20 @@
 /**
  * Created by PhpStorm.
  * User: glyczak
- * Date: 5/15/17
- * Time: 9:29 AM
+ * Date: 5/17/17
+ * Time: 10:14 AM
  */
 
-session_start();
-session_destroy();
+include_once 'galileo.php';
+include_once 'trial.php';
 
+session_start();
+
+if(!isset($_SESSION['current_quest']) || !isset($_SESSION['current_trial']) || $_SESSION['current_quest'] != 4 || !Trial::quest_completed($_SESSION['current_quest'] - 1, $_SESSION['current_trial'])) {
+    header('location: index.php');
+}
+unset($_SESSION['current_quest'], $_SESSION['current_trial']);
+Galileo::win();
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +25,7 @@ session_destroy();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Welcome to TreasureBox!</title>
+    <title>You have won!</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/app.css" rel="stylesheet">
@@ -31,12 +38,11 @@ session_destroy();
                 <h3 class="panel-title">Welcome to TreasureBox!</h3>
             </div>
             <div class="panel-body">
-                <p>To open the box, you must complete are series of trials divided among three quests.  With each
-                    successive completion, a new level will be unlocked.  Once all levels are complete the box will unlock,
-                    and it's treasure will be yours!</p>
-                <p><strong>Do you choose to accept your quest?</strong></p>
-                <form action="play.php">
-                    <button class="btn btn-default" onclick="submit();">Let's Go!</button>
+                <p>The box is opened, and it's treasures are revealed unto you.  You ride home victorious having bested
+                    your challenge against all odds.</p>
+                <p><strong>Would you like to meet the developer of this game?</strong></p>
+                <form action="https://gaba.space/">
+                    <button class="btn btn-default" onclick="submit();">Sure!</button>
                 </form>
             </div>
         </div>

@@ -6,7 +6,8 @@
  * Time: 2:28 PM
  */
 
-include 'trial.php';
+include_once 'trial.php';
+include_once 'galileo.php';
 
 session_start(); //start or continue the session
 
@@ -28,7 +29,7 @@ if (!isset($_SESSION['current_quest'])) { //if user has no progress, start new s
 }
 
 if (Trial::quest_completed($_SESSION['current_quest'], $_SESSION['current_trial'])) { //advance quest when user is done
-    if ($_SERVER['request_method'] == 'GET') {
+    if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         //Galileo::complete_quest($_SESSION['current_quest']); //TODO re-enable this when for testing & production
         $_SESSION['current_trial'] = 1;
         $_SESSION['current_quest'] += 1;
@@ -93,7 +94,7 @@ if (Trial::quest_completed($_SESSION['current_quest'], $_SESSION['current_trial'
                         <?php endif; ?>
                     </form>
                 </div>
-            <?php elseif ($_SESSION['current_quest'] == 3): ?>
+            <?php elseif ($_SESSION['current_quest'] > 3): ?>
                 <div class="panel-heading">
                     <h3 class="panel-title">Victory!</h3>
                 </div>
@@ -101,11 +102,8 @@ if (Trial::quest_completed($_SESSION['current_quest'], $_SESSION['current_trial'
                     <p>You have attained the eternal glory in your completion of these three quests. All that is
                         left now, is to reveal the mysteries of the ethereal TreasureBox</p>
                     <p><strong>Shall you open the TreasureBox?</strong></p>
-                    <form action="">
-                        <button class="btn btn-default" name="answer" value="mmmm_ahhh">
-                            Just a moment to savor the glory.
-                        </button>
-                        <button class="btn btn-default" name="answer" value="onward" onclick="submit();">
+                    <form action="win.php">
+                        <button class="btn btn-default" name="war_cry" value="onward" onclick="submit();">
                             Show me the contents!
                         </button>
                     </form>
@@ -120,7 +118,7 @@ if (Trial::quest_completed($_SESSION['current_quest'], $_SESSION['current_trial'
                         contemplate your victory.</p>
                     <p><strong>Shall you proceed to the next quest?</strong></p>
                     <form action="">
-                        <button class="btn btn-default" name="answer" value="onward" onclick="submit();">
+                        <button class="btn btn-default" name="war_cry" value="onward" onclick="submit();">
                             Onward!
                         </button>
                     </form>
