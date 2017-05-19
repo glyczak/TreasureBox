@@ -112,7 +112,7 @@ class Trial {
                 //TODO implement second quest trials
                 switch ($trial) {
                     case 1:
-                        $this->body = 'Another challenge';
+                        $this->body = 'Welcome to the second trial. You find yourself in the ';
                         $this->question = 'This is a question';
                         $this->correct_answer = 'Correct';
                         $this->wrong_answer = 'Incorrect';
