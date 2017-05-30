@@ -207,11 +207,11 @@ class Trial {
     public static function quest_completed($quest, $trial) {
         switch ($quest) {
             case 1:
-                return $trial > 6; //TODO replace 3 with total # of trials in quest 1
+                return $trial > 6;
             case 2:
-                return $trial > 5; //TODO replace 10 with total # of trials in quest 2
+                return $trial > 5;
             case 3:
-                return $trial > 8; //TODO replace 10 with total # of trials in quest 3
+                return $trial > 8;
             default:
                 return false;
         }
