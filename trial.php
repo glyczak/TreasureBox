@@ -19,8 +19,8 @@ class Trial {
                 //TODO implement first quest trials
                 switch ($trial) {
                     case 1:
-                        $this->body = 'Welcome to the second trial. You find at the base of a temple. The entrance is
-                        sealed off, leaving you stuck outside. There is also no where for you go to. You guess the 
+                        $this->body = 'Welcome. You find at the base of a temple. The entrance is sealed off, leaving you
+                        stuck outside. There is also no where for you go to. You see nothing you can go to nearby so the
                         only thing to is to find a way in, right?';
                         $this->question = 'What should you do?';
                         $this->correct_answer = 'Search the perimeter';
@@ -68,7 +68,7 @@ class Trial {
                     case 6:
                         $this->body = 'You carefully arrange the characters in a proper order. Suddenly you feel the
                         ground begin to shake! Oh no! Did you do it wrong? The floor beneath you starts to shake and
-                        a set of stairs emerges from the ground. You step back to see you can move to the next floor!';
+                        a set of stairs emerges from the ground. Looks like you can move to the next floor!';
                         $this->question = 'Will you go up?';
                         $this->correct_answer = 'Yes';
                         $this->wrong_answer = 'No';
@@ -146,13 +146,13 @@ class Trial {
                         shifting with every step you take. There is no way for you to know which way to go, you can only 
                         trust your gut.';
                         $this->question = 'Where do you run?';
-                        $this->correct_answer = 'Left';
-                        $this->wrong_answer = 'Right';
+                        $this->correct_answer = 'Straight';
+                        $this->wrong_answer = 'Left';
                         break;
                     case 3:
-                        $this->body = 'You go left this time. Hoping to avoid any dead ends, you try to think of a way to
-                        get away from the boulder. You have reached one of the walls of the temple, not just a wall in
-                        the maze. Maybe you should try going towards the center? Or maybe the other corners of the maze?';
+                        $this->body = 'You keep going the same direction. Hoping to avoid any dead ends, you try to think 
+                        of a way to get away from the boulder. You have reached one of the walls of the temple, not just a
+                        wall of the maze. Maybe you should try going towards the center? Or maybe the other corners of the maze?';
                         $this->question = 'Where do you run?';
                         $this->correct_answer = 'Center';
                         $this->wrong_answer = 'Corners';
@@ -171,8 +171,8 @@ class Trial {
                         Whatever, you go left. You look back to see where the boulder is and find it stuck where you
                         turned left. You have gained yourself some time, but it will still come after you.';
                         $this->question = 'Where do you run?';
-                        $this->correct_answer = 'Right';
-                        $this->wrong_answer = 'Left';
+                        $this->correct_answer = 'Left';
+                        $this->wrong_answer = 'Right';
                         break;
                     case 6:
                         $this->body = 'Keep going left! You run through any and every left opening you can until you
